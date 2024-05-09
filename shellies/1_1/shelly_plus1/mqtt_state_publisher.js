@@ -17,7 +17,7 @@ function mqttPublish(topic, inputValue) {
   }
   MQTT.publish(
     SHELLY_ID + topic,
-    JSON.stringify(inputValue ? 'on' : 'off'),
+    JSON.stringify(inputValue ? true : false),
     0,
     false
   );
