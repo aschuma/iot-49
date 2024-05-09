@@ -12,7 +12,7 @@ Shelly.call('Mqtt.GetConfig', '', function (res, err_code, err_msg, ud) {
 });
 
 function mqttPublish(topic, inputValue) {
-  if (typeof SHELLY_ID === 'undefined' && inputValue === null) {
+  if (typeof SHELLY_ID === 'undefined' || inputValue === null) {
     return;
   }
   MQTT.publish(
